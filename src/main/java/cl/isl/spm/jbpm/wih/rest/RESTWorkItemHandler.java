@@ -14,12 +14,15 @@ import cl.isl.spm.jbpm.wih.handlers.RESTHandler;
 
 public class RESTWorkItemHandler implements WorkItemHandler {
 	
-	public static final String IN_URL_BASE="urlBase";
+	//public static final String IN_URL_BASE="urlBase";
 	public static final String IN_METHOD="method";
 	public static final String IN_PATH="path";
 	
+	public static final String SYSTEM_URL_BASE="spm.jbpm.url.base";
+	public static final String URL_BASE_DEFAULT="localhost:8080/isl-spm";
 	
-	protected String urlBase = "localhost:8080/isl-spm";
+	
+	protected String urlBase;
 		
 	protected String path;
 	
@@ -30,18 +33,19 @@ public class RESTWorkItemHandler implements WorkItemHandler {
 	
 	private void resolveParameters(Map<String, Object> parameters) {
 		Map<String, Object> ret = new HashMap<String, Object>(parameters);
-		if (parameters.containsKey(IN_URL_BASE)) {
-			String serverP = (String) parameters.get(IN_URL_BASE);
-			//es una propiedad
-			if (serverP.trim().startsWith("$")) {
-				urlBase = System.getProperty(serverP.trim().substring(2, serverP.trim().length()-1));
-			} else {
-				urlBase = serverP;
-			}
-			
-			ret.remove(IN_URL_BASE);		
-		}
-		
+		urlBase = System.getProperty(SYSTEM_URL_BASE, URL_BASE_DEFAULT);
+//		if (parameters.containsKey(IN_URL_BASE)) {
+//			String serverP = (String) parameters.get(IN_URL_BASE);
+//			//es una propiedad
+//			if (serverP.trim().startsWith("$")) {
+//				urlBase = System.getProperty(serverP.trim().substring(2, serverP.trim().length()-1));
+//			} else {
+//				urlBase = serverP;
+//			}
+//			
+//			ret.remove(IN_URL_BASE);		
+//		}
+//		
 		
 		
 		if (parameters.containsKey(IN_PATH)) {
