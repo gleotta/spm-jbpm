@@ -3,6 +3,9 @@ package cl.isl.spm.jbpm.wih.rest;
 import cl.isl.spm.jbpm.wih.handlers.RESTHandler;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR01HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR03HandlerDummy;
+import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR04HandlerDummy;
+import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR07HandlerDummy;
+import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR09HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.R01HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.R02HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.R04HandlerDummy;
@@ -41,12 +44,18 @@ public class RESTWorkItemHandlerDummy extends RESTWorkItemHandler {
 				return new FacturacionR01HandlerDummy();
 			if (rest.equals("r03"))
 				return new FacturacionR03HandlerDummy();
+			if (rest.equals("r04"))
+				return new FacturacionR04HandlerDummy();
+			if (rest.equals("r07"))
+				return new FacturacionR07HandlerDummy();
+			if (rest.equals("r09"))
+				return new FacturacionR09HandlerDummy();
 			
 			
 		}
 		
 		
-		throw new RESTException("No exsite implementación para " + rest);
+		throw new RESTException("No existe implementación para " + rest);
 	}
 
 }
