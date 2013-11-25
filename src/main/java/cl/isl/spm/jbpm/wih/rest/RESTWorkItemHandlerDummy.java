@@ -4,6 +4,7 @@ import cl.isl.spm.jbpm.wih.handlers.RESTHandler;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR01HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR03HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR04HandlerDummy;
+import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR05HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR07HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.FacturacionR09HandlerDummy;
 import cl.isl.spm.jbpm.wih.handlers.dummy.R01HandlerDummy;
@@ -46,6 +47,10 @@ public class RESTWorkItemHandlerDummy extends RESTWorkItemHandler {
 				return new FacturacionR03HandlerDummy();
 			if (rest.equals("r04"))
 				return new FacturacionR04HandlerDummy();
+			if (rest.equals("r05"))
+				return new FacturacionR05HandlerDummy();
+			if (rest.equals("r06"))
+				return new FacturacionR05HandlerDummy();
 			if (rest.equals("r07"))
 				return new FacturacionR07HandlerDummy();
 			if (rest.equals("r09"))

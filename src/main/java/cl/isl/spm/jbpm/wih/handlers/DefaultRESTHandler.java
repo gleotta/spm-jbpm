@@ -22,6 +22,9 @@ public class DefaultRESTHandler implements RESTHandler {
 	public Map<String, Object> execute(String method, String uri,
 			Map<String, Object> parameters) throws RESTException {
 
+		if (parameters == null) {
+			parameters = new HashMap<String, Object>();
+		}
 		RESTClient restClient = new RESTClient(method, uri,
 				JSONUtil.convertMapToJSON(parameters));
 		String resultado = null;

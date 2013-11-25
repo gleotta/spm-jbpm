@@ -10,33 +10,21 @@ import cl.isl.spm.jbpm.wih.rest.RESTClient;
 import cl.isl.spm.jbpm.wih.rest.RESTException;
 import cl.isl.spm.jbpm.wih.util.JSONUtil;
 
-public class R04HandlerDummy implements RESTHandler {
+public class FacturacionR05HandlerDummy implements RESTHandler {
 
 	@Override
 	public Map<String, Object> execute(String method, String uri,
 			Map<String, Object> parameters) throws RESTException {
 
-		if (parameters == null) {
-			parameters = new HashMap<String, Object>();
-		}
 		String body = JSONUtil.convertMapToJSON(parameters);
 
 		System.out.println("REST Client:" + method + " " + uri);
 		System.out.println(body);
 
-		Integer cid = new Integer((String) parameters.get("cid"));
-		String archivoSeleccionado = (String) parameters.get("archivoSeleccionado");
+		Integer cid = new Integer((String) parameters.get("fid"));
 		Map<String, Object> ret = new HashMap<String, Object>();
-		if (cid == 10000) {
-			if (archivoSeleccionado.equals("ok"))
-				ret.put("validacionFormato", true);
-			else
-				ret.put("validacionFormato", false);
-
-		} else {
-
-			ret.put("validacionFormato", false);
-		}
+		
+		ret.put("sucess",true);
 		String res = JSONUtil.convertMapToJSON(ret);
 		System.out.println("REST Client RESULT:" + res);
 
