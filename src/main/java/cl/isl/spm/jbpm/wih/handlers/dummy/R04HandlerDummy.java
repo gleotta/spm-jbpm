@@ -28,11 +28,8 @@ public class R04HandlerDummy implements RESTHandler {
 		String archivoSeleccionado = (String) parameters.get("archivoSeleccionado");
 		Map<String, Object> ret = new HashMap<String, Object>();
 		if (cid == 10000) {
-			if (archivoSeleccionado.equals("ok"))
-				ret.put("validacionFormato", true);
-			else
-				ret.put("validacionFormato", false);
-
+			ret.put("validacionFormato", true);
+			
 		} else {
 
 			ret.put("validacionFormato", false);
