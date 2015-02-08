@@ -3,8 +3,9 @@ package com.cuyum.jbpm;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jbpm.task.service.UserGroupCallback;
+import org.kie.api.task.UserGroupCallback;
 
+@Deprecated
 public class JbpmUserGroupCallback implements UserGroupCallback {
 
 	@Override

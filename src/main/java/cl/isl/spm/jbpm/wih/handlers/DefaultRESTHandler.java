@@ -1,13 +1,7 @@
 package cl.isl.spm.jbpm.wih.handlers;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import cl.isl.spm.jbpm.wih.rest.RESTClient;
 import cl.isl.spm.jbpm.wih.rest.RESTException;
